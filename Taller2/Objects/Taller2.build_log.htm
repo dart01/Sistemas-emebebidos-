@@ -1,0 +1,116 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.40.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: diego andres, none, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.40.0.3
+Toolchain Path:  C:\Users\diego\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.22
+Assembler:       Armasm.exe V6.22
+Linker/Locator:  ArmLink.exe V6.22
+Library Manager: ArmAr.exe V6.22
+Hex Converter:   FromElf.exe V6.22
+CPU DLL:         SARMCM3.DLL V5.40.0.3
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\diego\Desktop\Taller2\Taller2.uvprojx
+Project File Date:  09/21/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.22', folder: 'C:\Users\diego\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f767xx.s...
+compiling system_stm32f7xx.c...
+main.cpp(316): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  316 |                         actualizarMensajeLCDEnColumna("CNY:si");// Mostrar el valor en la pantalla LCD en columna 8
+      |                                                       ^
+main.cpp(320): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  320 |                         actualizarMensajeLCDEnColumna("CNY:no");// Mostrar el valor en la pantalla LCD en columna 8
+      |                                                       ^
+main.cpp(414): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  414 |                                                                                 actualizarMensaje2LCD("00:00");
+      |                                                                                                       ^
+main.cpp(493): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  493 |                 actualizarMensajeLCD("INFR:no");
+      |                                      ^
+main.cpp(495): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  495 |                 actualizarMensajeLCDEnColumna("CNY:no");
+      |                                               ^
+main.cpp(497): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  497 |                 actualizarMensaje2LCD("00:00");
+      |                                       ^
+main.cpp(519): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  519 |                                         actualizarMensajeLCDmovimiento("Run!!!");
+      |                                                                        ^
+main.cpp(521): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  521 |                                         actualizarMensajeLCDmovimiento("Back!!");
+      |                                                                        ^
+main.cpp(523): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  523 |                                         actualizarMensajeLCDmovimiento("Left!!");
+      |                                                                        ^
+main.cpp(525): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  525 |                                         actualizarMensajeLCDmovimiento("Right!");
+      |                                                                        ^
+main.cpp(527): warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+  527 |                                         actualizarMensajeLCDmovimiento("stop!!");
+      |                                                                        ^
+main.cpp(535): warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned int') [-Wsign-compare]
+  535 |             for (int i = 0; i < strlen(alert); i++) {
+      |                             ~ ^ ~~~~~~~~~~~~~
+main.cpp(542): warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned int') [-Wsign-compare]
+  542 |                                                                 for (int i = 0; i < strlen(alert); i++) {
+      |                                                                                 ~ ^ ~~~~~~~~~~~~~
+main.cpp(555): warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned int') [-Wsign-compare]
+  555 |             for (int i = 0; i < strlen(alert); i++) {
+      |                             ~ ^ ~~~~~~~~~~~~~
+main.cpp(562): warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned int') [-Wsign-compare]
+  562 |                                                                 for (int i = 0; i < strlen(alert); i++) {
+      |                                                                                 ~ ^ ~~~~~~~~~~~~~
+15 warnings generated.
+compiling main.cpp...
+linking...
+Program Size: Code=10872 RO-data=1172 RW-data=20 ZI-data=1680  
+FromELF: creating hex file...
+".\Objects\Taller2.axf" - 0 Error(s), 15 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F7xx_DFP.2.16.0.pack
+                Keil::STM32F7xx_DFP@2.16.0
+                STMicroelectronics STM32F7 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.2.5
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/diego/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Users/diego/AppData/Local/Arm/Packs/Keil/STM32F7xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+
+   * Component: Keil::Device:Startup@1.2.5
+      Source file:   MDK/Device/Source/ARM/STM32F76x_77x_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/arm/startup_stm32f767xx.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F76x_77x_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/system_stm32f7xx.c
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
