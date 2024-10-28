@@ -45,22 +45,22 @@ void SysTick_ms(uint32_t x) {
 
 
 void LCD(unsigned char val) {
-		GPIOC->ODR |= 1UL << 8; // PA8 (E)
+		GPIOC->ODR |= 1UL << 8; // PC8 (E)
 		SysTick_ms(10);
 		GPIOA->ODR = (GPIOA->ODR & ~0xF0) | ((val & 0x0F) << 4); // PA4-PA7 (D4-D7)
 		SysTick_ms(1);
-		GPIOC->ODR &= ~(1UL << 8); // PA8 (E)
+		GPIOC->ODR &= ~(1UL << 8); // PC8 (E)
 		SysTick_ms(1);
 }
 
 void settingsLCD(unsigned char val) {
-		GPIOC->ODR &= ~(1UL << 9); // PA9 (RS)
+		GPIOC->ODR &= ~(1UL << 9); // PC9 (RS)
 		LCD(val >> 4);
 		LCD(val & 0x0f);
 }
 
 void writeLCD(unsigned char val) {
-		GPIOC->ODR |= 1UL << 9; // PA9 (RS)
+		GPIOC->ODR |= 1UL << 9; // PC9 (RS)
 		LCD(val >> 4);
 		LCD(val & 0x0f);
 }
