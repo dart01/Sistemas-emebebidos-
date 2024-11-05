@@ -4,14 +4,14 @@
 
 
 uint8_t flag_cronometro = 0, flag_deteccion = 0, cont = 0, cronometro_iniciado = 0;
-char text[16];
+
 char estado_deteccion[12] = "INFR: no";
 unsigned char d;       // Variable para datos recibidos por UART
 int segundos = 0;
 int minutos = 0;  // Variable para contar los minutos
 uint16_t digital;
 float voltaje;
-
+char text[8];
 char text2[8];
 char estado_plataforma[6] = "stop";
 int movimiento=0;
@@ -439,10 +439,10 @@ extern "C" {
                 }
                 flag_cronometro = 1;   // Activar la bandera para actualizar la LCD
 							
+							}
 						}
-        }
-    }
-}
+				}
+			}
 		
 		//interrupcion de comunicacion usart4 para modulo hc05
 		void UART4_IRQHandler(void) {
