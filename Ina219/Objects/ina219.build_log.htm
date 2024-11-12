@@ -27,13 +27,23 @@ Project File Date:  11/05/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Users\diego\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-assembling startup_stm32f767xx.s...
 compiling system_stm32f7xx.c...
+assembling startup_stm32f767xx.s...
+main.cpp(369): warning: unused parameter 'linea' [-Wunused-parameter]
+  369 | void actualizarCorrienteEnLCD(float corriente, uint8_t linea) {
+      |                                                        ^
+main.cpp(390): warning: 'snprintf' will always be truncated; specified size is 16, but format string expands to at least 19 [-Wformat-truncation]
+  390 |     snprintf(mensaje, sizeof(mensaje), "Corriente: %.2f mA", corriente);
+      |     ^
+main.cpp(407): warning: 'snprintf' will always be truncated; specified size is 16, but format string expands to at least 19 [-Wformat-truncation]
+  407 |     snprintf(mensaje, sizeof(mensaje), "Corriente: %.2f mA", corriente);
+      |     ^
+3 warnings generated.
 compiling main.cpp...
 linking...
-Program Size: Code=8852 RO-data=1104 RW-data=0 ZI-data=1656  
+Program Size: Code=8588 RO-data=1128 RW-data=0 ZI-data=1648  
 FromELF: creating hex file...
-".\Objects\ina219.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\ina219.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,10 +69,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.1.0
 
    * Component: Keil::Device:Startup@1.2.5
-      Source file:   MDK/Device/Source/ARM/STM32F76x_77x_OPT.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
-      Source file:   MDK/Device/Source/ARM/STM32F76x_77x_OTP.s
+      Source file:   MDK/Device/Source/ARM/STM32F76x_77x_OPT.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/arm/startup_stm32f767xx.s
+      Source file:   MDK/Device/Source/ARM/STM32F76x_77x_OTP.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F7xx/Source/Templates/system_stm32f7xx.c
 Build Time Elapsed:  00:00:02
 </pre>

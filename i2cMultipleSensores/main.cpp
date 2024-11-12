@@ -189,7 +189,7 @@ void settings() {
 #define INA219_REG_BUS_VOLTAGE    0x02
 #define INA219_REG_POWER          0x03
 #define INA219_REG_CURRENT        0x04
-#define INA219_REG_CALIBRATION    0x05
+#define INA219_REG_CALIBRATION    0x04
 
 // Variables
 uint16_t shunt_voltage_raw;
@@ -290,7 +290,7 @@ void readINA219(uint8_t address, INA219_Data *data) {
     // Leer corriente
     ReadI2C1(address, INA219_REG_CURRENT, buffer, 2);
     uint16_t current_raw = (buffer[0] << 8) | buffer[1];
-    data->current_mA = (float)current_raw * 0.1;  // Conversión a mA
+    data->current_mA = (float)current_raw*0.01 ;  // Conversión a mA
 }
 
 
@@ -340,7 +340,7 @@ int main() {
     // Configurar el INA219
     configureINA219(INA219_ADDRESS_1);
 		configureINA219(INA219_ADDRESS_2);
-		configureINA219(INA219_ADDRESS_3);
+		//configureINA219(INA219_ADDRESS_3);
 		
 		 // Declaración de estructuras para almacenar datos de cada sensor
     INA219_Data sensor1_data, sensor2_data, sensor3_data;
@@ -351,7 +351,7 @@ int main() {
 				// Leer datos de cada sensor
         readINA219(INA219_ADDRESS_1, &sensor1_data);
 				readINA219(INA219_ADDRESS_2, &sensor2_data);
-        readINA219(INA219_ADDRESS_3, &sensor3_data);
+        //readINA219(INA219_ADDRESS_3, &sensor3_data);
 			
        
 
@@ -364,8 +364,8 @@ int main() {
         actualizarCorrienteServo2EnLCD(sensor2_data.current_mA);
 
 //        // Mostrar o enviar datos del sensor 3
-        actualizarVoltajeServo3EnLCD(sensor3_data.bus_voltage);
-        actualizarCorrienteServo3EnLCD(sensor3_data.current_mA);
+        //actualizarVoltajeServo3EnLCD(sensor3_data.bus_voltage);
+        //actualizarCorrienteServo3EnLCD(sensor3_data.current_mA);
 
         // Delay para evitar actualización demasiado rápida en pantalla
         //SysTick_ms(1000);
